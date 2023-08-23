@@ -1,0 +1,23 @@
+{% extends 'category/base.html' %}
+
+{% block title %}
+
+Category Update
+
+{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'category_list' %}">Back to Category List</a>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Create">
+
+</form>
+
+{% endblock %}

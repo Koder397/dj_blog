@@ -1,0 +1,25 @@
+{% extends 'category/base.html' %}
+
+{% block title %}
+
+Category List
+
+{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'category_create' %}">Create Category</a>
+
+<ul>
+
+{% for category_row in object_list %}
+
+    <li>{{ category_row }}</li>
+    <a href="{{ category_row.category_id }}/update">Update</a>
+    <a href="{{ category_row.category_id }}/delete">Delete</a>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}
