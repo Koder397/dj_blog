@@ -1,0 +1,29 @@
+{% extends 'post/base.html' %}
+
+{% block title %}
+
+Post Create
+
+{% endblock %}
+
+{% block content %}
+
+<h4>Create Post</h4>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <div class="mb-3">
+
+        {{ form.as_p }}
+
+    </div>
+
+    <input class="btn btn-success" role="button" type="submit" value="Create">
+
+</form>
+<br>
+<a class="btn btn-primary" role="button" href="{% url 'post_list' %}">Back to List</a>
+
+{% endblock %}

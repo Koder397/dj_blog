@@ -1,0 +1,23 @@
+{% extends 'post/base.html' %}
+
+{% block title %}
+
+Post Update
+
+{% endblock %}
+
+{% block content %}
+
+<a class="btn btn-tertiary" role="button" href="{% url 'post_list' %}">Back to List</a>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input class="btn btn-success" role="button" type="submit" value="Update">
+
+</form>
+
+{% endblock %}
